@@ -21,7 +21,7 @@ except:
     pass
 
 
-
+#count 是当前到多少单词的一个计数
 
 
 
@@ -34,10 +34,11 @@ with open('wordlist/'+a+'_son.txt', 'r', encoding='UTF-8') as wordlist:
     N = len(lines)
     p.start(N)
 
+#从上回结束的开始遍历
     for line in lines[count:]:     # 遍历数据
         print(line)
         
-        #核对输入是否正确
+        #核对输入是否正确，变量num用于表示这一行进行到了第几个字母
         num = 0
         
         word = input()
@@ -55,7 +56,7 @@ with open('wordlist/'+a+'_son.txt', 'r', encoding='UTF-8') as wordlist:
                 os.system('clear')
                 print(line)
                 
-                time.sleep(0.01)
+                #time.sleep(0.01)
                 p.update(count+1)
                 
                 word = input()
