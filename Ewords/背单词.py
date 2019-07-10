@@ -8,6 +8,9 @@ import random
 #import progressbar
 import time
 
+#update on july11 2019
+from tqdm import tqdm
+
 #选择词汇表
 print("Choose the wordlist:")
 print("1.CET-6  2.TOELF  3.GRE")
@@ -38,8 +41,17 @@ with open('wordlist/'+a+'_son.txt', 'r', encoding='UTF-8') as wordlist:
 
 #从上回结束的开始遍历
     for line in lines[count:]:     # 遍历数据
-        print(line)
         
+        #下面是进度条
+        pbar = tqdm(lines)
+        pbar.update(count)
+        pbar.close()
+
+        print("")
+        print("")
+        print(line)
+        print("")
+
         #核对输入是否正确，变量num用于表示这一行进行到了第几个字母
         num = 0
         
@@ -58,14 +70,19 @@ with open('wordlist/'+a+'_son.txt', 'r', encoding='UTF-8') as wordlist:
                 os.system('clear')
                 print(line)
                 
+
+
+                
                 #time.sleep(0.01)
-                p.update(count+1)
+                #p.update(count+1)
                 
                 word = input()
                 while(word == "exit"):
                     progress.write(str(count))
                     progress.close()
                     os._exit(0)
+                
+
         count += 1
             
 

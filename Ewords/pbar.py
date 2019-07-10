@@ -1,11 +1,8 @@
-#how to use progress bar
-import progressbar
+#how to use dqdm
 import time
+from tqdm import tqdm
 
-p = progressbar.ProgressBar()
-N = 1000
-p.start(N)
-for i in range(N):
-    time.sleep(0.01)
-    p.update(i+1)
-p.finish()
+text = ""
+for char in tqdm(["a", "b", "c", "d"]):
+    text = text + char
+    time.sleep(0.5)
