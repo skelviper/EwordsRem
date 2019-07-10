@@ -5,7 +5,7 @@
 
 import os
 import random
-import progressbar
+#import progressbar
 import time
 
 #选择词汇表
@@ -32,9 +32,9 @@ except:
 with open('wordlist/'+a+'_son.txt', 'r', encoding='UTF-8') as wordlist:
     lines = wordlist.readlines()    # 接收数据
 
-    p = progressbar.ProgressBar()
-    N = len(lines)
-    p.start(N)
+    # p = progressbar.ProgressBar()
+    # N = len(lines)
+    # p.start(N)
 
 #从上回结束的开始遍历
     for line in lines[count:]:     # 遍历数据
